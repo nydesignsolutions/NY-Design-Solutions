@@ -3,40 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website TESTINNNGGGGG</title>
+    <title>MedDesign | Medical Device Development Services</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-        header { background: #f4f4f4; padding: 10px; text-align: center; }
-        nav a { margin: 0 10px; text-decoration: none; color: blue; }
-        footer { margin-top: 20px; font-size: 0.8em; text-align: center; border-top: 1px solid #ccc; }
+        :root {
+            --primary: #004a99;
+            --secondary: #00a3ad;
+            --dark: #333;
+            --light: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 74, 153, 0.8), rgba(0, 74, 153, 0.8)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; }
+
+        /* Sections */
+        section { padding: 4rem 10%; }
+        h2 { color: var(--primary); margin-bottom: 2rem; text-align: center; }
+
+        /* Credentials & Experience Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+        /* Contact Info */
+        .contact-bar {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 10%;
+        }
+
+        .contact-info {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            background: #eee;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="https://google.com">Search</a>
-        </nav>
+    <nav>
+        <div class="logo">MED-DESIGN SOLUTIONS</div>
+        <div class="nav-links">
+            <a href="#about">Services</a>
+            <a href="#credentials">Credentials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Innovating Healthcare Solutions</h1>
+        <p>Expert Design and Product Development Services for the Medical Device Industry.</p>
     </header>
 
-    <main>
-        <h2>About This Page</h2>
-        <p>This is a simple website created using basic HTML and a little bit of CSS for styling.</p>
-        
-        <h3>Key Features:</h3>
-        <ul>
-            <li>Clean and simple layout</li>
-            <li>Mobile-responsive design</li>
-            <li>Easy to customize</li>
-        </ul>
+    <section id="about">
+        <h2>Expertise & Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Product Development</h3>
+                <p>End-to-end management from conceptual design to prototyping and manufacturing handoff.</p>
+            </div>
+            <div class="card">
+                <h3>Regulatory Compliance</h3>
+                <p>Navigating FDA 510(k) submissions, ISO 13485 standards, and quality management systems.</p>
+            </div>
+            <div class="card">
+                <h3>UX/UI for Healthcare</h3>
+                <p>Human-centered design specifically tailored for clinical environments and patient safety.</p>
+            </div>
+        </div>
+    </section>
 
-        <img src="https://placeholder.com" alt="Placeholder Image">
-    </main>
+    <section id="credentials" style="background-color: var(--light);">
+        <h2>Credentials & Accomplishments</h2>
+        <div class="grid">
+            <div class="card" style="background: white;">
+                <h3>Key Accomplishments</h3>
+                <ul>
+                    <li>Led development for 3 Class II Medical Devices.</li>
+                    <li>Reduced manufacturing costs by 20% for AlphaMed Inc.</li>
+                    <li>Patent holder for "Intelligent Fluid Delivery System."</li>
+                </ul>
+            </div>
+            <div class="card" style="background: white;">
+                <h3>Education & Certification</h3>
+                <ul>
+                    <li>M.S. in Biomedical Engineering</li>
+                    <li>Certified Quality Auditor (CQA)</li>
+                    <li>10+ Years of Industry Experience</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-bar">
+        <h2>Let's Build the Future of Health</h2>
+        <p>Ready to bring your medical innovation to life?</p>
+        <div class="contact-info">
+            Phone: <a href="tel:+15551234567">(555) 123-4567</a><br>
+            Email: <a href="mailto:yourname@example.com">consultant@meddesign.com</a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 My Simple Website</p>
+        <p>&copy; 2024 MedDesign Solutions. All Rights Reserved.</p>
     </footer>
 
 </body>
